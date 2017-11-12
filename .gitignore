@@ -1,0 +1,10 @@
+## .gitignore
+
+# .gitignore for maven
+target/
+
+# web application file
+
+# IDE support file
+.idea
+demo.iml

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xy.demo.dao.HeatMapStationDao">
+
+    <resultMap id="StationBaseMap" type="com.xy.demo.model.HeatMapInfo">
+        <result column="zPm" property="count" jdbcType="INTEGER"/>
+        <result column="zLongitude" property="lng" jdbcType="DOUBLE"/>
+        <result column="zLatitude" property="lat" jdbcType="DOUBLE"/>
+    </resultMap>
+
+    <select id="selectHeatMapStation" resultMap="StationBaseMap">
+        select zLongitude,zLatitude,zPm from LTE_Cell where zPm is not NULL and zCell_Type = #{type}
+    </select>
+
+</mapper>
